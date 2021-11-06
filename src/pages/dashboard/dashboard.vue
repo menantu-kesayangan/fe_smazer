@@ -4,9 +4,9 @@
       <div class="paddingatas">
         <h1 class="text-center ">Data Statistik Harian</h1>
       </div>
-      <div class="row">
+      <div class="row ">
         <div class="col-md-4">
-          <div class="card border-left-primary">
+          <div class="card border-left-danger">
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
@@ -16,7 +16,8 @@
                     Suhu Tertinggi
                   </div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800">
-                    30
+                    {{ suhu_tertinggi }}
+                    <sup>o</sup>C
                   </div>
                 </div>
                 <div class="col-auto">
@@ -27,26 +28,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card border-left-primary">
-            <div class="card-body">
-              <div class="row no-gutters align-items-center">
-                <div class="col mr-2">
-                  <div
-                    class="font-weight-bold text-uppercase text-primary  mb-1"
-                  >
-                    Suhu Terendah
-                  </div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800">50</div>
-                </div>
-                <div class="col-auto">
-                  <feather type="thermometer"></feather>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card border-left-primary">
+          <div class="card border-left-warning">
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
@@ -56,7 +38,8 @@
                     Suhu Rata-rata
                   </div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800">
-                    30
+                    {{ suhu_rata }}
+                    <sup>o</sup>C
                   </div>
                 </div>
                 <div class="col-auto">
@@ -67,7 +50,30 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card border-left-primary">
+          <div class="card border-left-success">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div
+                    class="font-weight-bold text-uppercase text-primary mb-1"
+                  >
+                    Suhu Terendah
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    {{ suhu_terendah }}
+                    <sup>o</sup>C
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <feather type="thermometer"></feather>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-left-info">
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
@@ -77,7 +83,8 @@
                     Saturasi Oksigen Tertinggi
                   </div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800">
-                    30%
+                    {{ saturasi_tertinggi }}
+                    &#37;
                   </div>
                 </div>
                 <div class="col-auto">
@@ -88,16 +95,18 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card border-left-primary">
+          <div class="card border-left-dark">
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                   <div
-                    class="font-weight-bold text-uppercase text-primary  mb-1"
+                    class="text-xs font-weight-bold text-primary text-uppercase mb-1"
                   >
                     Saturasi Oksigen Terendah
                   </div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800">50</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    {{ saturasi_terendah }} &#37;
+                  </div>
                 </div>
                 <div class="col-auto">
                   <feather type="droplet"></feather>
@@ -117,7 +126,7 @@
                     Saturasi Oksigen Rata-rata
                   </div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800">
-                    30
+                    {{ saturasi_rata }} &#37;
                   </div>
                 </div>
                 <div class="col-auto">
@@ -176,10 +185,118 @@
 
 <script>
 var primary = localStorage.getItem("primary_color") || "#7366ff";
+import API from "@/services/api.service";
 export default {
   name: "ChartWidgets",
   data() {
-    return {};
+    return {
+      suhu_tertinggi: 0,
+      suhu_terendah: 0,
+      suhu_rata: 0,
+      saturasi_tertinggi: 0,
+      saturasi_terendah: 0,
+      saturasi_rata: 0,
+    };
+  },
+  created() {
+    this.getSuhuTertinggi();
+    this.getSuhuTerendah();
+    this.getSuhuRata();
+    this.getSaturasiTertinggi();
+    this.getSaturasiTerendah();
+    this.getSaturasiRata();
+  },
+  methods: {
+    getSuhuTertinggi() {
+      API.get("/api/maxsuhu").then(({ status, data }) => {
+        if (status === 200 || status === 201) {
+          // if (data.status) {
+          //notif berhasil
+          console.log(data);
+          this.suhu_tertinggi = data.data;
+        } else {
+          //notif gagal
+        }
+        // } else {
+        //notif gagal
+        // }
+      });
+    },
+    getSuhuTerendah() {
+      API.get("/api/minsuhu").then(({ status, data }) => {
+        if (status === 200 || status === 201) {
+          // if (data.status) {
+          //notif berhasil
+          console.log(data);
+          this.suhu_tertinggi = data.data;
+        } else {
+          //notif gagal
+        }
+        // } else {
+        //   //notif gagal
+        // }
+      });
+    },
+    getSuhuRata() {
+      API.get("/api/meansuhu").then(({ status, data }) => {
+        if (status === 200 || status === 201) {
+          // if (data.status) {
+          //notif berhasil
+          console.log(data);
+          this.suhu_rata = data.data;
+        } else {
+          //notif gagal
+        }
+        // } else {
+        //   //notif gagal
+        // }
+      });
+    },
+    getSaturasiTertinggi() {
+      API.get("/api/maxsaturasi").then(({ status, data }) => {
+        if (status === 200 || status === 201) {
+          // if (data.status) {
+          //notif berhasil
+          console.log(data);
+          this.saturasi_tertinggi = data.data;
+        } else {
+          //notif gagal
+        }
+        // } else {
+        //   //notif gagal
+        // }
+      });
+    },
+    getSaturasiTerendah() {
+      API.get("/api/minsaturasi").then(({ status, data }) => {
+        if (status === 200 || status === 201) {
+          // if (data.status) {
+          //notif berhasil
+          console.log(data);
+          this.saturasi_terendah = data.data;
+        } else {
+          //notif gagal
+        }
+        // } else {
+        //   //notif gagal
+        // }
+      });
+    },
+    getSaturasiRata() {
+      API.get("/api/meansaturasi").then(({ status, data }) => {
+        if (status === 200 || status === 201) {
+          // if (data.status) {
+          //notif berhasil
+          console.log(data);
+          this.saturasi_rata = data.data;
+        } else {
+          //notif gagal
+        }
+        // } else {
+        //   //notif gagal
+        // }
+      });
+    },
   },
 };
 </script>
@@ -187,6 +304,7 @@ export default {
 .paddingatas {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: black;
-  padding: 6%;
+  padding: 10%;
+  padding-bottom: 2%;
 }
 </style>

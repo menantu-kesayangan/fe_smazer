@@ -10,17 +10,19 @@
 <script></script>
 <style>
 #header {
+  z-index: 9999;
   position: fixed;
   left: 0;
   top: 0;
 
   width: 100vw;
 }
+
 .warna {
   background-color: purple;
 }
 .font {
   color: white;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: fantasy;
 }
 </style>
