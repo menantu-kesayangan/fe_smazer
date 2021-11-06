@@ -5,6 +5,7 @@
     </div>
 
     <router-view class="view"></router-view>
+    <Footer />
   </div>
 </template>
 
@@ -25,6 +26,7 @@ export default {
 
   components: {
     Header,
+    Footer,
   },
   computed: {
     ...mapState({

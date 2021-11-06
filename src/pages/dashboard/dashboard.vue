@@ -95,27 +95,6 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card border-left-dark">
-            <div class="card-body">
-              <div class="row no-gutters align-items-center">
-                <div class="col mr-2">
-                  <div
-                    class="text-xs font-weight-bold text-primary text-uppercase mb-1"
-                  >
-                    Saturasi Oksigen Terendah
-                  </div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800">
-                    {{ saturasi_terendah }} &#37;
-                  </div>
-                </div>
-                <div class="col-auto">
-                  <feather type="droplet"></feather>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
           <div class="card border-left-primary">
             <div class="card-body">
               <div class="row no-gutters align-items-center">
@@ -127,6 +106,27 @@
                   </div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800">
                     {{ saturasi_rata }} &#37;
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <feather type="droplet"></feather>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-left-dark">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div
+                    class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                  >
+                    Saturasi Oksigen Terendah
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    {{ saturasi_terendah }} &#37;
                   </div>
                 </div>
                 <div class="col-auto">
@@ -228,7 +228,7 @@ export default {
           // if (data.status) {
           //notif berhasil
           console.log(data);
-          this.suhu_tertinggi = data.data;
+          this.suhu_terendah = data.data;
         } else {
           //notif gagal
         }
@@ -304,7 +304,7 @@ export default {
 .paddingatas {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: black;
-  padding: 10%;
+  padding: 5%;
   padding-bottom: 2%;
 }
 </style>
