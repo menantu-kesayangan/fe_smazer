@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div>
       <h1 class="text-center bg-prima font-cambria">Data Statistik Harian</h1>
     </div>
