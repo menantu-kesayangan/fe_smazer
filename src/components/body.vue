@@ -1,15 +1,12 @@
 <template>
   <div class="view">
     <div class="page-body">
-      <div class="page-header" :class="{ close_icon: !togglesidebar }">
-        <Header @clicked="sidebar_toggle" />
-      </div>
-
-      <router-view class="view"></router-view>
-      <div class="page-footer" :class="{ close_icon: !togglesidebar }">
-        <Footer @clicked="sidebar_toggle" />
-      </div>
+      <Header />
     </div>
+
+    <router-view class="view"></router-view>
+
+    <Footer />
   </div>
 </template>
 
@@ -23,12 +20,11 @@ export default {
   data() {
     return {
       mobileheader_toggle_var: false,
-      sidebar_toggle_var: false,
 
       resized: false,
     };
   },
-  // props:['sidebar_toggle_var'],
+
   components: {
     Header,
     Footer,
@@ -44,7 +40,7 @@ export default {
   created() {
     window.addEventListener("resize", this.handleResize);
     this.handleResize();
-    this.resized = this.sidebar_toggle_var;
+
     this.$store.dispatch("layout/set");
   },
   watch: {
@@ -63,10 +59,6 @@ export default {
           });
         });
       });
-    },
-    sidebar_toggle_var: function() {
-      this.resized =
-        this.width <= 991 ? !this.sidebar_toggle_var : this.sidebar_toggle_var;
     },
   },
   methods: {

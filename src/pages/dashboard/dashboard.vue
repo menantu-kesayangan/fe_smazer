@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div>
-      <h1 class="text-center bg-prima font-cambria">Data Statistik Harian</h1>
+      <h1 class="text-center size">Data Statistik Harian</h1>
     </div>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 mb-2">
         <px-card class="static-top-widget-card">
           <div slot="with-padding">
             <div class="media static-top-widget">
@@ -38,7 +38,7 @@
           </div>
         </px-card>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 mb-2">
         <px-card class="static-top-widget-card">
           <div slot="with-padding">
             <div class="media static-top-widget">
@@ -72,7 +72,7 @@
           </div>
         </px-card>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 mb-2">
         <px-card class="static-top-widget-card">
           <div slot="with-padding">
             <div class="media static-top-widget">
@@ -104,7 +104,7 @@
           </div>
         </px-card>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 mb-2">
         <px-card class="static-top-widget-card">
           <div slot="with-padding">
             <div class="media static-top-widget">
@@ -137,7 +137,7 @@
           </div>
         </px-card>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 mb-2">
         <px-card class="static-top-widget-card">
           <div slot="with-padding">
             <div class="media static-top-widget">
@@ -170,7 +170,7 @@
           </div>
         </px-card>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 mb-2">
         <px-card class="static-top-widget-card">
           <div slot="with-padding">
             <div class="media static-top-widget">
@@ -260,3 +260,9 @@ export default {
   },
 };
 </script>
+<style>
+.size {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: black;
+}
+</style>
