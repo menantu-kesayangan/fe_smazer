@@ -1,7 +1,7 @@
 <template>
   <div class="container">
       <v-row>
-        <v-col sm="12" md="12" lg="12" xl="12">
+        <v-col sm="12" md="12" lg="12" xl="12" class="mt-16 mt-sm-16 ">
           <h1 class="text-center ">Data Statistik Harian</h1>
         </v-col>
 
