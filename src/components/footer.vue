@@ -1,17 +1,13 @@
 <template>
-  <div>
-    <div class="container-fluid">
-      <footer class="footer">
-        <div class="row">
-          <div class="col-md-12 footer-copyright text-center">
-            <p class="mb-0">
-              Copyright 2021 © PT Azki Inovasi Nusantara
-            </p>
-          </div>
-        </div>
-      </footer>
+  <footer class="main-footer">
+    <div class="row">
+      <div class="col-md-12 footer-copyright text-center">
+        <p class="mb-0">
+          Copyright 2021 © PT Azki Inovasi Nusantara
+        </p>
+      </div>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -28,3 +24,16 @@ export default {
   },
 };
 </script>
+<style>
+.main-footer {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 20px rgba(89, 102, 122, 0.1);
+  box-shadow: 0 0 20px rgba(89, 102, 122, 0.1);
+  /* padding: 15px; */
+  bottom: 0;
+  left: 0;
+  /* margin-left: 280px; */
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+</style>
