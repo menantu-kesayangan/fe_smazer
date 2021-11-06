@@ -1,11 +1,21 @@
 <template>
   <div class="view">
-    <div class="page-body">
-      <Header />
-    </div>
+    <div
+        class="page-wrapper"
+    >
+      <div class="page-header">
+        <Header />
+      </div>
 
-    <router-view class="view"></router-view>
-    <Footer />
+        <div class="page-body">
+          <transition name="fadeIn" enter-active-class="animated fadeIn">
+            <router-view class="view"></router-view>
+          </transition>
+        </div>
+        <Footer />
+
+      <!-- <Customizer /> -->
+    </div>
   </div>
 </template>
 

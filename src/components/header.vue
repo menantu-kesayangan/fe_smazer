@@ -1,20 +1,18 @@
 <template>
-  <div>
+
     <header id="header">
       <div class="warna border rounded">
         <h1 class="font text-center">SMAZER 2.0</h1>
       </div>
     </header>
-  </div>
 </template>
 <script></script>
 <style>
 #header {
   z-index: 9999;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
-
   width: 100vw;
 }
 

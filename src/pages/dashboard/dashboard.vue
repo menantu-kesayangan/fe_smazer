@@ -1,17 +1,17 @@
 <template>
   <div class="container">
-    <div>
-      <div class="paddingatas">
-        <h1 class="text-center ">Data Statistik Harian</h1>
-      </div>
-      <div class="row ">
+      <v-row>
+        <v-col sm="12" md="12" lg="12" xl="12">
+          <h1 class="text-center ">Data Statistik Harian</h1>
+        </v-col>
+
         <div class="col-md-4">
           <div class="card border-left-danger">
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                   <div
-                    class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                      class="text-xs font-weight-bold text-primary text-uppercase mb-1"
                   >
                     Suhu Tertinggi
                   </div>
@@ -33,7 +33,7 @@
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                   <div
-                    class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                      class="text-xs font-weight-bold text-primary text-uppercase mb-1"
                   >
                     Suhu Rata-rata
                   </div>
@@ -55,7 +55,7 @@
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                   <div
-                    class="font-weight-bold text-uppercase text-primary mb-1"
+                      class="font-weight-bold text-uppercase text-primary mb-1"
                   >
                     Suhu Terendah
                   </div>
@@ -78,7 +78,7 @@
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                   <div
-                    class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                      class="text-xs font-weight-bold text-primary text-uppercase mb-1"
                   >
                     Saturasi Oksigen Tertinggi
                   </div>
@@ -100,7 +100,7 @@
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                   <div
-                    class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                      class="text-xs font-weight-bold text-primary text-uppercase mb-1"
                   >
                     Saturasi Oksigen Rata-rata
                   </div>
@@ -121,7 +121,7 @@
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                   <div
-                    class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                      class="text-xs font-weight-bold text-primary text-uppercase mb-1"
                   >
                     Saturasi Oksigen Terendah
                   </div>
@@ -147,10 +147,10 @@
               <div id="donutchart">
                 <center>
                   <iframe
-                    width="300"
-                    height="260"
-                    style="border: 0px solid #cccccc;"
-                    src="https://thingspeak.com/channels/1322668/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+                      width="300"
+                      height="260"
+                      style="border: 0px solid #cccccc;"
+                      src="https://thingspeak.com/channels/1322668/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
                   ></iframe>
                 </center>
               </div>
@@ -168,18 +168,17 @@
               <div id="donutchart">
                 <center>
                   <iframe
-                    width="300"
-                    height="260"
-                    style="border: 0px solid #cccccc;"
-                    src="https://thingspeak.com/channels/1322668/widgets/375826"
+                      width="300"
+                      height="260"
+                      style="border: 0px solid #cccccc;"
+                      src="https://thingspeak.com/channels/1322668/widgets/375826"
                   ></iframe>
                 </center>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </v-row>
   </div>
 </template>
 
