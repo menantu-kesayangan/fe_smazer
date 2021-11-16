@@ -5,17 +5,17 @@
         <h1 class="text-center teks">Data Statistik Harian</h1>
       </v-col>
 
-      <div class="col-md-4">
-        <div class="card border-left-danger">
+      <div class="col-md-4 ">
+        <div class="card border card1">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
                 <div
-                  class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                  class="text-xs font-weight-bold text-light text-uppercase mb-1"
                 >
                   Suhu Tertinggi
                 </div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                <div class="h5 mb-0 font-weight-bold text-light">
                   {{ suhu_tertinggi }}
                   <sup>o</sup>C
                 </div>
@@ -28,16 +28,16 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card border-left-warning">
+        <div class="card border card2">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
                 <div
-                  class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                  class="text-xs font-weight-bold text-light text-uppercase mb-1"
                 >
                   Suhu Rata-rata
                 </div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                <div class="h5 mb-0 font-weight-bold text-light">
                   {{ suhu_rata }}
                   <sup>o</sup>C
                 </div>
@@ -50,14 +50,16 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card border-left-success">
+        <div class="card border card3">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
-                <div class="font-weight-bold text-uppercase text-primary mb-1">
+                <div
+                  class="text-xs font-weight-bold text-light text-uppercase mb-1"
+                >
                   Suhu Terendah
                 </div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                <div class="h5 mb-0 font-weight-bold text-light">
                   {{ suhu_terendah }}
                   <sup>o</sup>C
                 </div>
@@ -71,16 +73,16 @@
       </div>
 
       <div class="col-md-4">
-        <div class="card border-left-info">
+        <div class="card border card4">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
                 <div
-                  class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                  class="text-xs font-weight-bold text-light text-uppercase mb-1"
                 >
                   Saturasi Oksigen Tertinggi
                 </div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                <div class="h5 mb-0 font-weight-bold text-light">
                   {{ saturasi_tertinggi }}
                   &#37;
                 </div>
@@ -93,16 +95,16 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card border-left-primary">
+        <div class="card border-left card5">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
                 <div
-                  class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                  class="text-xs font-weight-bold text-light text-uppercase mb-1"
                 >
                   Saturasi Oksigen Rata-rata
                 </div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                <div class="h5 mb-0 font-weight-bold text-light">
                   {{ saturasi_rata }} &#37;
                 </div>
               </div>
@@ -114,16 +116,16 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card border-left-dark">
+        <div class="card border card6">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
                 <div
-                  class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                  class="text-xs font-weight-bold text-light text-uppercase mb-1"
                 >
                   Saturasi Oksigen Terendah
                 </div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                <div class="h5 mb-0 font-weight-bold text-light">
                   {{ saturasi_terendah }} &#37;
                 </div>
               </div>
@@ -135,44 +137,39 @@
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div class="card">
+      <div class="col-md-12">
+        <div class="card card7">
           <div class="widget-feedback card-body">
             <div class="feedback-top text-center">
               <h6 class="font-roboto f-w-400">Data Pengunjung</h6>
             </div>
             <!-- <div class="text-center">chart put here</div> -->
-            <div id="donutchart">
-              <center>
-                <iframe
-                  width="300"
-                  height="260"
-                  style="border: 0px solid #cccccc;"
-                  src="https://thingspeak.com/channels/1322668/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
-                ></iframe>
-              </center>
-            </div>
+            <center>
+              <iframe
+                width="450"
+                height="260"
+                style="border: 1px solid #cccccc;"
+                src="https://thingspeak.com/channels/1567602/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Data+Suhu&type=line"
+              ></iframe>
+            </center>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div class="card">
+      <div class="col-md-12">
+        <div class="card card8">
           <div class="widget-feedback card-body">
             <div class="feedback-top text-center">
               <h6 class="font-roboto f-w-400">Volume Hand Sanitizer</h6>
             </div>
-            <!-- <div class="text-center">chart put here</div> -->
-            <div id="donutchart">
-              <center>
-                <iframe
-                  width="300"
-                  height="260"
-                  style="border: 0px solid #cccccc;"
-                  src="https://thingspeak.com/channels/1322668/widgets/375826"
-                ></iframe>
-              </center>
-            </div>
+            <center>
+              <iframe
+                width="450"
+                height="260"
+                style="border: 1px solid #cccccc;"
+                src="https://thingspeak.com/channels/1560641/widgets/378987"
+              ></iframe>
+            </center>
           </div>
         </div>
       </div>
@@ -195,6 +192,7 @@ export default {
       saturasi_rata: 0,
     };
   },
+
   created() {
     this.getSuhuTertinggi();
     this.getSuhuTerendah();
@@ -203,95 +201,67 @@ export default {
     this.getSaturasiTerendah();
     this.getSaturasiRata();
   },
+
   methods: {
     getSuhuTertinggi() {
       API.get("/api/maxsuhu").then(({ status, data }) => {
-        if (status === 200 || status === 201) {
-          // if (data.status) {
-          //notif berhasil
-          console.log(data);
+        if (status == 200 || status == 201) {
           this.suhu_tertinggi = data.data;
-        } else {
-          //notif gagal
+          setInterval(() => {
+            this.getSuhuTertinggi;
+          }, 3000);
         }
-        // } else {
-        //notif gagal
-        // }
       });
     },
+
     getSuhuTerendah() {
       API.get("/api/minsuhu").then(({ status, data }) => {
-        if (status === 200 || status === 201) {
-          // if (data.status) {
-          //notif berhasil
-          console.log(data);
+        if (status == 200 || status == 201) {
           this.suhu_terendah = data.data;
-        } else {
-          //notif gagal
+          setInterval(() => {
+            this.getSuhuTerendah;
+          }, 3000);
         }
-        // } else {
-        //   //notif gagal
-        // }
       });
     },
     getSuhuRata() {
       API.get("/api/meansuhu").then(({ status, data }) => {
-        if (status === 200 || status === 201) {
-          // if (data.status) {
-          //notif berhasil
-          console.log(data);
+        if (status == 200 || status == 201) {
           this.suhu_rata = data.data;
-        } else {
-          //notif gagal
+          setInterval(() => {
+            this.getSuhuRata;
+          }, 3000);
         }
-        // } else {
-        //   //notif gagal
-        // }
       });
     },
     getSaturasiTertinggi() {
       API.get("/api/maxsaturasi").then(({ status, data }) => {
-        if (status === 200 || status === 201) {
-          // if (data.status) {
-          //notif berhasil
-          console.log(data);
+        if (status == 200 || status == 201) {
           this.saturasi_tertinggi = data.data;
-        } else {
-          //notif gagal
+          setInterval(() => {
+            this.getSaturasiTertinggi;
+          }, 3000);
         }
-        // } else {
-        //   //notif gagal
-        // }
       });
     },
     getSaturasiTerendah() {
       API.get("/api/minsaturasi").then(({ status, data }) => {
-        if (status === 200 || status === 201) {
-          // if (data.status) {
-          //notif berhasil
-          console.log(data);
+        if (status == 200 || status == 201) {
           this.saturasi_terendah = data.data;
-        } else {
-          //notif gagal
+          setInterval(() => {
+            this.getSaturasiTerendah;
+          }, 3000);
         }
-        // } else {
-        //   //notif gagal
-        // }
       });
     },
     getSaturasiRata() {
       API.get("/api/meansaturasi").then(({ status, data }) => {
-        if (status === 200 || status === 201) {
-          // if (data.status) {
-          //notif berhasil
-          console.log(data);
+        if (status == 200 || status == 201) {
           this.saturasi_rata = data.data;
-        } else {
-          //notif gagal
+          setInterval(() => {
+            this.getSaturasiRata;
+          }, 3000);
         }
-        // } else {
-        //   //notif gagal
-        // }
       });
     },
   },
@@ -301,5 +271,35 @@ export default {
 .teks {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: black;
+}
+.card1 {
+  background-color: #f33a3a;
+  color: white;
+}
+.card2 {
+  background-color: #ceb546;
+  color: white;
+}
+.card3 {
+  background-color: navy;
+  color: white;
+}
+.card4 {
+  background-color: #5e96ae;
+  color: white;
+}
+.card5 {
+  background-color: #999999;
+  color: white;
+}
+.card6 {
+  background-color: Tomato;
+  color: white;
+}
+.card7 {
+  background-color: #dcdcdc;
+}
+.card8 {
+  background-color: #dcdcdc;
 }
 </style>
