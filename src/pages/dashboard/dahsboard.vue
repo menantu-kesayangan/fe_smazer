@@ -280,6 +280,9 @@ export default {
       saturasi_tertinggi: 0,
       saturasi_terendah: 0,
       saturasi_rata: 0,
+      pengunjung_perhari: 0,
+      pengunjung_perminggu: 0,
+      pengunjung_perbulan: 0,
     };
   },
 
@@ -290,9 +293,42 @@ export default {
     this.getSaturasiTertinggi();
     this.getSaturasiTerendah();
     this.getSaturasiRata();
+    this.getPengunjungPerhari();
+    this.getPengunjungPerminggu();
+    this.getPengunjungPerbulan();
   },
 
   methods: {
+    getPengunjungPerhari() {
+      API.get("/api/jmlhpengunjunghariini").then(({ status, data }) => {
+        if (status == 200 || status == 201) {
+          this.pengunjung_perhari = data.data;
+          setInterval(() => {
+            this.getPengunjungPerhari;
+          }, 3000);
+        }
+      });
+    },
+    getPengunjungPerminggu() {
+      API.get("/api/jmlhpengunjungmingguini").then(({ status, data }) => {
+        if (status == 200 || status == 201) {
+          this.pengunjung_perminggu = data.data;
+          setInterval(() => {
+            this.getPengunjungPerminggu;
+          }, 3000);
+        }
+      });
+    },
+    getPengunjungPerbulan() {
+      API.get("/api/jmlhpengunjungbulanini").then(({ status, data }) => {
+        if (status == 200 || status == 201) {
+          this.pengunjung_perbulan = data.data;
+          setInterval(() => {
+            this.getPengunjungPerbulan;
+          }, 3000);
+        }
+      });
+    },
     getSuhuTertinggi() {
       API.get("/api/maxsuhu").then(({ status, data }) => {
         if (status == 200 || status == 201) {
