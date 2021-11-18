@@ -2,7 +2,7 @@
   <div class="container">
     <v-row>
       <v-col sm="12" md="12" lg="12" xl="12" class="mt-16 mt-sm-16 ">
-        <h1 class="text-center teks">Data Statistik Harian</h1>
+        <h1 class="text-center teks">Data Statistik</h1>
       </v-col>
 
       <div class="col-md-4 ">
@@ -136,20 +136,110 @@
           </div>
         </div>
       </div>
+      <div class="col-md-4 ">
+        <div class="card border card7">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div
+                  class="text-xs font-weight-bold text-light text-uppercase mb-1"
+                >
+                  Jumlah Pengunjung PerHari
+                </div>
+                <div class="h5 mb-0 font-weight-bold text-light">
+                  {{ pengunjung_perhari }}
+                </div>
+              </div>
+              <div class="col-auto">
+                <feather type="user"></feather>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border card8">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div
+                  class="text-xs font-weight-bold text-light text-uppercase mb-1"
+                >
+                  Jumlah Pengunjung PerMinggu
+                </div>
+                <div class="h5 mb-0 font-weight-bold text-light">
+                  {{ pengunjung_perminggu }}
+                </div>
+              </div>
+              <div class="col-auto">
+                <feather type="user"></feather>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border card9">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div
+                  class="text-xs font-weight-bold text-light text-uppercase mb-1"
+                >
+                  Jumlah Pengunjung Perbulan
+                </div>
+                <div class="h5 mb-0 font-weight-bold text-light">
+                  {{ pengunjung_perbulan }}
+                </div>
+              </div>
+              <div class="col-auto">
+                <feather type="user"></feather>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="col-md-12">
-        <div class="card card7">
+        <div class="card card-suhu">
           <div class="widget-feedback card-body">
-            <div class="feedback-top text-center">
-              <h6 class="font-roboto f-w-400">Data Pengunjung</h6>
-            </div>
+            <!-- <div class="text-center">chart put here</div> -->
+            <center>
+              <iframe
+                width="490"
+                height="260"
+                style="border: 0px solid #cccccc;"
+                src="https://thingspeak.com/channels/1560641/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Suhu&type=line"
+              ></iframe>
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card card-saturasi">
+          <div class="widget-feedback card-body">
             <!-- <div class="text-center">chart put here</div> -->
             <center>
               <iframe
                 width="450"
                 height="260"
-                style="border: 1px solid #cccccc;"
-                src="https://thingspeak.com/channels/1567602/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Data+Suhu&type=line"
+                style="border: 0px solid #cccccc;"
+                src="https://thingspeak.com/channels/1560641/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Saturasi+Oksigen&type=line"
+              ></iframe>
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card card-pengunjung">
+          <div class="widget-feedback card-body">
+            <!-- <div class="text-center">chart put here</div> -->
+            <center>
+              <iframe
+                width="450"
+                height="260"
+                style="border: 0px solid #cccccc;"
+                src="https://thingspeak.com/channels/1560641/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Data+Pengunjung&type=line"
               ></iframe>
             </center>
           </div>
@@ -157,7 +247,7 @@
       </div>
 
       <div class="col-md-12">
-        <div class="card card8">
+        <div class="card card-volume">
           <div class="widget-feedback card-body">
             <div class="feedback-top text-center">
               <h6 class="font-roboto f-w-400">Volume Hand Sanitizer</h6>
@@ -166,7 +256,7 @@
               <iframe
                 width="450"
                 height="260"
-                style="border: 1px solid #cccccc;"
+                style="border: 0px solid #cccccc;"
                 src="https://thingspeak.com/channels/1560641/widgets/378987"
               ></iframe>
             </center>
@@ -293,13 +383,21 @@ export default {
   color: white;
 }
 .card6 {
-  background-color: Tomato;
+  background-color: #ff7f50;
   color: white;
 }
 .card7 {
-  background-color: #dcdcdc;
+  background-color: #ff6666;
+
+  color: white;
 }
 .card8 {
-  background-color: #dcdcdc;
+  background-color: #ff6666;
+
+  color: white;
+}
+.card9 {
+  background-color: #ff6666;
+  color: white;
 }
 </style>
