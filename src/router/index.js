@@ -41,7 +41,7 @@ const routes = [
       {
         path: "dashboard",
         name: "dashboard",
-        component: () => import("@/pages/dashboard/dashboard.vue"),
+        component: () => import("@/pages/dashboard/dahsboard.vue"),
         meta: {
           title: "Dashboard | SMAZER 2.0",
         },

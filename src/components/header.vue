@@ -1,10 +1,9 @@
 <template>
-
-    <header id="header">
-      <div class="warna border rounded">
-        <h1 class="font text-center">SMAZER 2.0</h1>
-      </div>
-    </header>
+  <header id="header">
+    <div class="warna border rounded">
+      <h1 class="font text-center">SMAZER 2.0</h1>
+    </div>
+  </header>
 </template>
 <script></script>
 <style>
@@ -17,10 +16,10 @@
 }
 
 .warna {
-  background-color: purple;
+  background-color: navy;
 }
 .font {
   color: white;
-  font-family: fantasy;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 </style>

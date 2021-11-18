@@ -28,6 +28,7 @@ import "@babel/polyfill";
 // api services
 import ApiService from "@/services/api.service";
 //
+import DataTable from "@/components/datatable.vue";
 
 import PxCard from "@/components/Pxcard.vue";
 import { Icon } from "leaflet";
@@ -40,6 +41,8 @@ import id from "@/locales/id.json";
 import { defaultLocale, localeOptions } from "@/constants/config.js";
 
 const messages = { en: en, es: es, id: id };
+
+Vue.component("data-table", DataTable);
 
 Vue.component("apexchart", VueApexCharts);
 
